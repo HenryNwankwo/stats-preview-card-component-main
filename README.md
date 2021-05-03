@@ -34,8 +34,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Solution of Stats preview card component challenge on Frontend Mentor](https://www.frontendmentor.io/solutions/mobile-first-approach-using-css-custom-properties-and-flexbox-UT5YVVkp2)
+- Live Site URL: [Live site of stats-preview-card-component-main](https://momenihin.github.io/stats-preview-card-component-main/)
 
 ## My process
 
