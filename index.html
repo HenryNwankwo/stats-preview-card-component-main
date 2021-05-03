@@ -1,33 +1,201 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Stats preview card component</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
+    <title>Frontend Mentor | Stats preview card component</title>
 
-  Get insights that help your business grow.
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lexend+Deca&display=swap");
 
-  Discover the benefits of data analytics and make better decisions regarding revenue, customer 
-  experience, and overall efficiency.
+      *,
+      *::before,
+      *::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-  10k+ companies
-  314 templates
-  12m+ queries
+      :root {
+        --main-background: hsl(233, 47%, 7%);
+        --card-background: hsl(244, 38%, 16%);
+        --accent-color: hsl(277, 64%, 61%);
+        --body-font-size: 15px;
+        --main-heading-stats-color: hsl(0, 0%, 100%);
+        --main-paragraph-color: hsla(0, 0%, 100%, 0.75);
+        --stat-headings-color: hsla(0, 0%, 100%, 0.6);
+      }
 
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+      body {
+        font-size: var(--body-font-size, 15px);
+        max-width: 100vw;
+        background: var(--main-background);
+        font-family: "Inter", sans-serif;
+        font-weight: 400;
+      }
+
+      .header_img {
+        width: 100%;
+        height: calc(654px / 2.7);
+        background: url("images/image-header-mobile.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-color: var(--accent-color);
+        filter: contrast(150%) sepia(45%);
+      }
+
+      .header_img::before {
+        content: "";
+        background: var(--accent-color);
+        width: 100%;
+        height: 100%;
+        display: flex;
+        opacity: 0.6;
+        filter: contrast(150%) sepia(5%);
+      }
+
+      main {
+        width: 88%;
+        height: auto;
+        background: var(--card-background);
+        margin: 70px auto;
+        text-align: center;
+      }
+
+      h1 {
+        color: var(--main-heading-stats-color);
+        font-family: "Inter", sans-serif;
+        font-weight: 700;
+        font-size: 1.9rem;
+      }
+
+      .card_body {
+        padding: 40px 20px;
+      }
+
+      article:first-child p {
+        margin: 1.1rem 0;
+        color: var(--main-paragraph-color);
+        line-height: 1.5rem;
+      }
+
+      article:first-child span {
+        color: var(--accent-color);
+      }
+
+      .stats {
+        margin-top: 1.5rem;
+        color: var(--stat-headings-color);
+        text-transform: uppercase;
+        font-family: "Lexend Deca", sans-serif;
+      }
+
+      .stats h3 {
+        color: var(--main-heading-stats-color);
+        margin-bottom: 0.4rem;
+        font-family: "Inter", sans-serif;
+        font-weight: 700;
+        font-size: 1.3rem;
+      }
+
+      .stats p {
+        letter-spacing: 0.05rem;
+        font-size: 0.65rem;
+      }
+
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+        margin-bottom: 2rem;
+        color: var(--main-paragraph-color);
+      }
+
+      .attribution a {
+        color: var(--stat-headings-color);
+      }
+
+      @media screen and (min-width: 1024px) and (max-width: 1440px) {
+        main {
+          display: flex;
+          flex-direction: row;
+          width: 85%;
+          height: fit-content;
+          text-align: left;
+        }
+
+        main section:first-child {
+          order: 1;
+        }
+
+        .card_body {
+          width: 100%;
+          padding: 4rem 5rem 0 5rem;
+        }
+
+        .stats_block {
+          display: flex;
+          justify-content: space-between;
+          width: 91%;
+        }
+
+        .header_img {
+          width: 100%;
+          height: 380px;
+          background: url("images/image-header-desktop.jpg");
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-color: var(--accent-color);
+        }
+
+        .card_body article:first-child p {
+          margin-right: 2.3rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <section class="header_img"></section>
+      <section class="card_body">
+        <article>
+          <h1>Get <span>insights</span> that help your business grow.</h1>
+          <p>
+            Discover the benefits of data analytics and make better decisions
+            regarding revenue, customer experience, and overall efficiency.
+          </p>
+        </article>
+        <article class="stats_block">
+          <div class="stats">
+            <h3>10k+</h3>
+            <p>companies</p>
+          </div>
+          <div class="stats">
+            <h3>314</h3>
+            <p>templates</p>
+          </div>
+          <div class="stats">
+            <h3>12m+</h3>
+            <p>queries</p>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Your Name Here</a>.
+    </div>
+  </body>
 </html>
